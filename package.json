@@ -9,19 +9,21 @@
   "bugs": "https://github.com/modelcontextprotocol/servers/issues",
   "type": "module",
   "workspaces": [
-    "src/*"
+    "src/everything",
+    "src/memory", 
+    "src/filesystem",
+    "src/sequentialthinking"
   ],
   "files": [],
   "scripts": {
     "build": "npm run build --workspaces",
     "watch": "npm run watch --workspaces",
     "publish-all": "npm publish --workspaces --access public",
-    "link-all": "npm link --workspaces"
+    "link-all": "npm link --workspaces",
+    "clean": "npm run clean --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present"
   },
-  "dependencies": {
-    "@modelcontextprotocol/server-everything": "*",
-    "@modelcontextprotocol/server-memory": "*",
-    "@modelcontextprotocol/server-filesystem": "*",
-    "@modelcontextprotocol/server-sequential-thinking": "*"
+  "devDependencies": {
+    "typescript": "^5.6.2"
   }
 }
